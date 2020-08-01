@@ -32,24 +32,6 @@ const FormWrap = styled.form`
     letter-spacing: 2px;
     font-family: "Gatintas";
   }
-  .text-box {
-    padding: 12px;
-
-    line-height: 1.6em;
-    color: #222;
-    width: 230px;
-    font-size: 1.2em;
-    max-height: 200px;
-    overflow: auto;
-    margin: 10px auto;
-    -moz-box-shadow: inset 0 0 3px #424874;
-    -webkit-box-shadow: inset 0 0 3px #424874;
-    box-shadow: inset 0 0 0px #424874;
-    &::-webkit-scrollbar {
-      width: 0px;
-      background: transparent; /* make scrollbar transparent */
-    }
-  }
 
   .button-style {
     cursor: pointer;
