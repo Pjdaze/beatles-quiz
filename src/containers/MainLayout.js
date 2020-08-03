@@ -1,10 +1,17 @@
 import React from "react";
-import MainWrapper from "../styled-components/MainWrapper";
+
+import Header from "./ui-components/Header";
+import Routes from "../Router/routes";
+import Footer from "./ui-components/Footer";
 
 const MainLayout = () => {
   return (
-    <MainWrapper>
+    <div className="full-height-flex">
+      <Header />
       <Routes />
-    </MainWrapper>
+      <Footer />
+    </div>
   );
 };
+
+export default MainLayout;
