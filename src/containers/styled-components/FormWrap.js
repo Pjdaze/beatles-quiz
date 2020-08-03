@@ -15,10 +15,10 @@ const FormWrap = styled.form`
 
   margin-top: 55px;
   position: relative;
-  width: 300px;
-  max-width: 300px;
-  min-width: 250px;
-  min-height: 230px;
+  width: 90%;
+  max-width: 600px;
+
+  min-height: 630px;
 
   h3,
   label {

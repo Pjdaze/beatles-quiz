@@ -7,7 +7,7 @@ const Home = () => {
     <div>
       <h1>Hardcore Beatles Fan Trivia</h1>
 
-      <p>
+      <p style={{ width: "55%", margin: "20px auto" }}>
         Here you can choose which test to use <br />i recomend you start with
         the easy test. Once you press start test you will have 7min to finish
         the test you will be graded on your speed and on your answers lets see
