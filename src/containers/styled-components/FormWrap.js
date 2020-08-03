@@ -3,8 +3,6 @@ import styled from "styled-components";
 const FormWrap = styled.form`
   border-radius: 2px;
   display: flex;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;

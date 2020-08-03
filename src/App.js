@@ -4,10 +4,22 @@ import "./App.css";
 import Header from "./containers/ui-components/Header";
 import Footer from "./containers/ui-components/Footer";
 import Routes from "./Router/routes";
-import MainLayout from "./containers/MainLayout";
+import styled from "styled-components";
+
+const MainLayout = styled.div`
+  height: 100vh;
+`;
 
 function App() {
-  return <MainLayout></MainLayout>;
+  return (
+    <MainLayout>
+      <Header />
+      <div className="full-height-flex">
+        <Routes />
+      </div>
+      <Footer />
+    </MainLayout>
+  );
 }
 
 export default App;
