@@ -21,15 +21,9 @@ const FormWrap = styled.form`
   min-height: 630px;
   .radio-group {
     width: 65%;
-    color: #222;
+    margin: 20px;
   }
-  .radio-group div {
-    &:nth-child(1) {
-      margin: 10px auto;
-      font-size: 1.2em;
-      color: #222;
-    }
-  }
+
   h3,
   label,
   .labelx {
