@@ -4,10 +4,10 @@ const FormWrap = styled.form`
   border-radius: 2px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
   box-shadow: 0 0 7px 0px #777;
-  padding: 0px 25px 25px 25px;
+  padding: 50px 25px 25px 25px;
 
   line-height: 1.5em;
   font-family: "Titillium Web";
@@ -19,16 +19,26 @@ const FormWrap = styled.form`
   max-width: 600px;
 
   min-height: 630px;
-
+  .radio-group {
+    width: 65%;
+    color: #222;
+  }
+  .radio-group div {
+    &:nth-child(1) {
+      margin: 10px auto;
+      font-size: 1.2em;
+      color: #222;
+    }
+  }
   h3,
-  label {
+  label,
+  .labelx {
     margin-top: 1px;
-
-    color: #fff;
-    font-size: calc(18px + 0.2vw);
-    font-weight: 300;
-    letter-spacing: 2px;
-    font-family: "Gatintas";
+    background-color: #32cfa4;
+    font-size: calc(18px + 0.4vw);
+    font-weight: normal;
+    letter-spacing: 1px;
+    font-family: "Roboto";
   }
 
   .button-style {
