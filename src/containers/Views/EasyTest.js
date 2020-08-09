@@ -1,52 +1,57 @@
 import React, { useState, useEffect } from "react";
+
 import FormWrap from "../styled-components/FormWrap";
-import { Label, Select, Input } from "semantic-ui-react";
-import { RadioGroup, RadioButton } from "react-radio-buttons";
+import { FormField, Radio } from "semantic-ui-react";
 
 const EasyTest = () => {
-  const [data, setData] = useState([]);
+  const [testData, setTestData] = useState([]);
+  const [option, setOption] = useState("");
 
   useEffect(() => {
-    const url = "https://opentdb.com/api.php?amount=10&category=26";
+    const url =
+      "https://opentdb.com/api.php?amount=10&category=26&type=multiple";
+
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setData(...data.results);
-        console.log(data.results[0]);
+        setTestData(data.results);
+        //console.log(data.results[0].question);
       });
   }, []);
 
+  const handleChange = (e, { option }) => {
+    setOption(option);
+    console.log(option);
+  };
+  console.log("TEST DATA HERE", testData);
   return (
     <FormWrap>
-      <Label className="labelx">
-        <p> {data.length && [data].map((x) => x[1].question)}</p>
-      </Label>
-      <RadioGroup className="radio-group">
-        <RadioButton
-          iconInnerSize={22}
-          rootColor="#222"
-          iconSize={22}
-          value="Alan Civil"
-        >
-          Alan Civil
-        </RadioButton>
-        <RadioButton
-          rootColor="#222"
-          iconInnerSize={22}
-          iconSize={22}
-          value="Arturo Sandoval"
-        >
-          Arturo Sandoval
-        </RadioButton>
-        <RadioButton
-          iconInnerSize={22}
-          rootColor="#222"
-          iconSize={20}
-          value="William May Stepher"
-        >
-          William May Stepher
-        </RadioButton>
-      </RadioGroup>
+      <div>
+        {testData.length &&
+          testData.map((x, i) => (
+            <div>
+              <h5>Question Number {i + 1} </h5>
+              <h4>{String(x.question)}</h4>
+
+              {/**       <ul>
+                {" "}
+                {x.incorrect_answers.map((item, index) => (
+                  <li>{`${index + 1}: ${item} `}</li>
+                ))}
+                <li>{` ${i + 1}: ${x.correct_answer}`}</li>
+              </ul> */}
+
+              {x.incorrect_answers.map((item, index) => (
+                <Radio
+                  label={`${index + 1}: ${item} `}
+                  checked={option}
+                  value={`${index + 1}: ${item} `}
+                  onChange={handleChange}
+                />
+              ))}
+            </div>
+          ))}
+      </div>
     </FormWrap>
   );
 };
