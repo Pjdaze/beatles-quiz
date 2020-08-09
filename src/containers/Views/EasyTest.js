@@ -19,18 +19,37 @@ const EasyTest = () => {
       });
   }, []);
 
-  const handleChange = (e, { option }) => setOption(option);
+  const handleChange = (e, { option }) => {
+    setOption(option);
+    console.log(option);
+  };
   console.log("TEST DATA HERE", testData);
   return (
     <FormWrap>
       <div>
         {testData.length &&
-          testData.map((x) => (
-            <Radio
-              label={x.question}
-              name="radioGroup"
-              onChange={handleChange}
-            />
+          testData.map((x, i) => (
+            <div>
+              <h5>Question Number {i + 1} </h5>
+              <h4>{String(x.question)}</h4>
+
+              {/**       <ul>
+                {" "}
+                {x.incorrect_answers.map((item, index) => (
+                  <li>{`${index + 1}: ${item} `}</li>
+                ))}
+                <li>{` ${i + 1}: ${x.correct_answer}`}</li>
+              </ul> */}
+
+              {x.incorrect_answers.map((item, index) => (
+                <Radio
+                  label={`${index + 1}: ${item} `}
+                  checked={option}
+                  value={`${index + 1}: ${item} `}
+                  onChange={handleChange}
+                />
+              ))}
+            </div>
           ))}
       </div>
     </FormWrap>

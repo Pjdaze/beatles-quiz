@@ -12,8 +12,8 @@ const FormWrap = styled.form`
   line-height: 1.5em;
   font-family: "Titillium Web";
   text-align: center;
-
-  margin-top: 55px;
+  overflow: scroll;
+  margin-top: 100px;
   position: relative;
   width: 90%;
   max-width: 600px;
