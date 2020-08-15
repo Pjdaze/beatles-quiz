@@ -9,10 +9,13 @@ const FormWrap = styled.form`
   box-shadow: 0 0 7px 0px #777;
   padding: 0px 25px 25px 25px;
 
-  line-height: 1.5em;
   font-family: "Titillium Web";
   text-align: center;
   overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
   margin-top: 100px;
   position: relative;
   width: 90%;
