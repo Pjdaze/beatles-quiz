@@ -7,20 +7,18 @@ const HardTest = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const url = "https://opentdb.com/api.php?amount=10&category=26";
+    const url = "https://opentdb.com/api.php?amount=10&category=10";
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
-        setData(...data.results);
+        setData(data.results);
         console.log(data.results[0]);
       });
   }, []);
 
   return (
     <FormWrap>
-      <Label className="labelx">
-        <p> {data.length && [data].map((x) => x[1].question)}</p>
-      </Label>
+      <Label className="labelx"></Label>
       <RadioGroup className="radio-group">
         <RadioButton
           iconInnerSize={22}

@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "../containers/Views/Home";
 import HardTest from "../containers/Views/HardTest";
 import EasyTest from "../containers/Views/EasyTest";
+import ContactForm from "../containers/Views/ContactForm";
 const Routes = (props) => (
   <Switch>
     <Route path="/" exact component={Home} />
@@ -12,6 +13,7 @@ const Routes = (props) => (
     <Route path="/EasyTest" exact component={EasyTest} />
 
     <Route path="/HardTest" exact component={HardTest} />
+    <Route path="/ContactForm" exact component={ContactForm} />
   </Switch>
 );
 
