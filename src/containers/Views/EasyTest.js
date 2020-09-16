@@ -29,9 +29,10 @@ const EasyTest = () => {
       <div>
         {testData.length &&
           testData.map((x, i) => (
-            <div>
-              <h5>Question Number {i + 1} </h5>
-              <h4>{String(x.question)}</h4>
+            <div style={{ margin: "40px auto" }}>
+              <h5 style={{ margin: "60px" }}>Question Number {i + 1} </h5>
+
+              <h4>{x.question.replace(/&#39;|&quot;/g, "")}</h4>
 
               {/**       <ul>
                 {" "}
@@ -43,12 +44,19 @@ const EasyTest = () => {
 
               {x.incorrect_answers.map((item, index) => (
                 <Radio
-                  label={`${index + 1}: ${item} `}
+                  label={`${index + 1}: ${String(item)} `}
                   checked={option}
-                  value={`${index + 1}: ${item} `}
+                  value={`${index + 1}: ${String(item)} `}
                   onChange={handleChange}
                 />
               ))}
+
+              <Radio
+                label={`${String(x.correct_answer)}`}
+                checked={option}
+                value={`${String(x.correct_answer)}`}
+                onChange={handleChange}
+              />
             </div>
           ))}
       </div>
